@@ -56,47 +56,48 @@ public class CursomcApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		Categoria cat1 = new Categoria(null, "Informática");
+		Categoria cat1 = new Categoria(null, "Informatica");
 		Categoria cat2 = new Categoria(null, "Escritório");
-		//
+		
 		// TODO Auto-generated method stub
 		Produto p1 = new Produto(null, "Computador", 2000.00);
 		Produto p2 = new Produto(null, "Impressora", 800.00);
 		Produto p3 = new Produto(null, "Mouse", 20.00);
 		
-		cat1.getProdutos().addAll(Arrays.asList(p1,p2, p3));
+		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
 		cat2.getProdutos().addAll(Arrays.asList(p2));
 		
 		p1.getCategorias().addAll(Arrays.asList(cat1));
-		p2.getCategorias().addAll(Arrays.asList(cat1,cat2));
+		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
-		categoriaRepository.saveAll(Arrays.asList(cat1,cat2));
-		produtoRepository.saveAll(Arrays.asList(p1,p2, p3));
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
 	
-		Estado est1 = new Estado(null, "Ceará");
-		Estado est2 = new Estado(null, "Piauí");
-		//
+		Estado est1 = new Estado(null, "Piauí");
+		Estado est2 = new Estado(null, "Ceará");
+		
 		// TODO Auto-generated method stub
-		Cidade c1 = new Cidade(null, "Jijoca", est1);
-		Cidade c2 = new Cidade(null, "Camocim", est2);
-		Cidade c3 = new Cidade(null, "Caucaia", est1);
+		Cidade c1 = new Cidade(null, "Teresina", est1);
+		Cidade c2 = new Cidade(null, "Fortaleza", est2);
+		Cidade c3 = new Cidade(null, "Caucaia", est2);
 		
 		est1.getCidades().addAll(Arrays.asList(c1));
-		est2.getCidades().addAll(Arrays.asList(c2,c3));
+		est2.getCidades().addAll(Arrays.asList(c2, c3));
 
-		estadoRepository.saveAll(Arrays.asList(est1));
-		cidadeRepository.saveAll(Arrays.asList(c1,c2, c3));
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 
 		Cliente cli1 = new Cliente(null, "Maria Silva","maria@gmail.com", "786537623876", TipoCliente.PESSOAFISICA);
-		cli1.getTelefones().addAll(Arrays.asList("874368743", "876363443"));
+		cli1.getTelefones().addAll(Arrays.asList("87436743", "87636343"));
 		
-		Endereco e1 = new Endereco(null, "Avenida Maria Silva", "78", "casa", "Centro", "4545262688",cli1, c1);
-		Endereco e2 = new Endereco(null, "Av Maria", "71", "casa", "Centro", "96973576467",cli1, c2);
+		Endereco e1 = new Endereco(null, "Avenida Dioguinho", "4240", "casa", "PF II", "4545262688",cli1, c1);
+		Endereco e2 = new Endereco(null, "Av Santos Dumont", "5000", "casa", "PF I", "96973576467",cli1, c2);
 		cli1.getEndereco().addAll(Arrays.asList(e1, e2));
 		
-		enderecosRepository.saveAll(Arrays.asList(e1));
 		clienteRepository.saveAll(Arrays.asList(cli1));
+		enderecosRepository.saveAll(Arrays.asList(e1, e2));
+		
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 		

@@ -3,6 +3,7 @@ package com.nelioalves.cursomc.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.nelioalves.cursomc.domain.Pedido;
 import com.nelioalves.cursomc.repositories.PedidoRepository;
 
@@ -12,8 +13,7 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository repo;
 	
-    public Pedido find(Integer id) {
-		Pedido obj = repo.findById(id).orElse(null);
-		return obj;
-	}
+	public Pedido find(Integer id) {
+		return this.repo.findById(id).orElse(null);
+		}
 }

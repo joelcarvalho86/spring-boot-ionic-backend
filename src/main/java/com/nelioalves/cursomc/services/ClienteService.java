@@ -12,10 +12,9 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository repo;
 
-    public Cliente find(Integer id) {
-		Cliente obj = repo.findById(id).orElse(null);
-		return obj;
-	}
+	public Cliente find(Integer id) {
+		return this.repo.findById(id).orElse(null);
+		}
 }
 //public Product find(Long id) {
 //    return this.productRepository.findById(id).orElse(null);

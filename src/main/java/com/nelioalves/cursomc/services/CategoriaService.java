@@ -12,8 +12,7 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository repo;
 	
-    public Categoria find(Integer id) {
-		Categoria obj = repo.findById(id).orElse(null);
-		return obj;
-	}
+	public Categoria find(Integer id) {
+		return this.repo.findById(id).orElse(null);
+		}
 }
