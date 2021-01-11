@@ -15,4 +15,9 @@ public class CategoriaService {
 	public Categoria find(Integer id) {
 		return this.repo.findById(id).orElse(null);
 		}
+	public Categoria insert(Categoria obj) {
+		obj.setId(null);
+		return repo.save(obj);
+		}
+
 }
