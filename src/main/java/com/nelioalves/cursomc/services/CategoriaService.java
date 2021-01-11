@@ -1,6 +1,6 @@
 package com.nelioalves.cursomc.services;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -51,4 +51,7 @@ public class CategoriaService {
 			 throw new DataIntegrityException("Não é possivel incluir produto na categoria serviço");
 		}
 		}
+	public List<Categoria> findAll(){
+		return repo.findAll();
+	}
 }
